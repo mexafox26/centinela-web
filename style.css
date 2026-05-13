@@ -1,0 +1,150 @@
+:root {
+    --main-bg: #050505;
+    --card-bg: #121212;
+    --accent-blue: #00b4ff;
+    --metallic-silver: #c0c0c0;
+    --text-light: #f0f0f0;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* Navegación */
+nav {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-blue);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav a { text-decoration: none; color: white; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover { color: var(--accent-blue); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+    padding-top: 80px;
+}
+
+.main-logo {
+    width: 280px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 15px rgba(0, 180, 255, 0.3));
+}
+
+h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 20px; }
+.hero p { max-width: 700px; margin: 0 auto 30px; color: var(--metallic-silver); }
+
+.hero-btns { display: flex; gap: 20px; justify-content: center; }
+
+.btn-primary, .btn-secondary {
+    padding: 12px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--accent-blue); color: black; }
+.btn-primary:hover { background: #00d2ff; transform: translateY(-3px); }
+
+.btn-secondary { border: 1px solid var(--accent-blue); color: var(--accent-blue); }
+.btn-secondary:hover { background: rgba(0, 180, 255, 0.1); }
+
+/* Estadísticas y Tecnología */
+h2 { font-family: 'Orbitron', sans-serif; text-align: center; margin-bottom: 50px; font-size: 2rem; color: var(--accent-blue); }
+
+.stats-grid, .tech-grid, .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.stat-card, .tech-card, .price-box {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-card h3 { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 10px; }
+.tech-card h4 { margin-bottom: 15px; color: var(--accent-blue); }
+
+/* Precios */
+.price-box.featured {
+    border: 2px solid var(--accent-blue);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 180, 255, 0.1);
+}
+
+.price { font-size: 2.5rem; font-weight: 700; margin: 20px 0; }
+.price span { font-size: 1rem; margin-left: 5px; }
+
+.price-box ul { text-align: left; list-style: none; margin-top: 25px; }
+.price-box li { margin-bottom: 12px; font-size: 0.9rem; }
+.price-box li::before { content: "✓ "; color: var(--accent-blue); }
+
+/* Team Section */
+.authors-list { list-style: none; margin: 30px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.authors-list li { background: #222; padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
+
+.team-section { text-align: center; }
+.institution { color: var(--accent-blue); font-weight: bold; margin-top: 10px; }
+
+footer {
+    text-align: center;
+    padding: 50px;
+    background: #000;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .hero-btns { flex-direction: column; }
+    .price-box.featured { transform: scale(1); }
+}
