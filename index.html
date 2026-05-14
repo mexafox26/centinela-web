@@ -3,125 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centinela AI | Vigilancia Industrial Autónoma</title>
+    <title>Centinela AI | Soluciones de Seguridad Industrial</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="overlay"></div>
+    <div class="video-bg-container">
+        <div class="overlay-grid"></div>
+    </div>
 
     <nav>
         <div class="nav-container">
             <div class="brand">CENTINELA<span>AI</span></div>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#inicio">Home</a></li>
                 <li><a href="#impacto">Impacto</a></li>
                 <li><a href="#tecnologia">Tecnología</a></li>
                 <li><a href="#precios">Soluciones</a></li>
                 <li><a href="#equipo">Team</a></li>
             </ul>
-            <a href="#precios" class="nav-cta">Cotizar Ahora</a>
+            <a href="mailto:contacto@centinelai.tech" target="_blank" class="nav-cta">Cotizar Ahora</a>
         </div>
     </nav>
 
-    <header id="inicio" class="hero">
-        <div class="hero-content">
+    <header id="inicio" class="hero section">
+        <div class="hero-content scroll-reveal">
             <div class="logo-wrapper">
                 <img src="Logo Centinela.PNG" alt="Centinela Logo" class="main-logo float-anim">
             </div>
             <h1 class="glitch-text">VISIÓN ARTIFICIAL AL SERVICIO DE LA SEGURIDAD</h1>
-            <p class="hero-subtitle">Reducimos accidentes y optimizamos costos mediante monitoreo autónomo con <strong>IA Local</strong>.</p>
+            <div class="text-box">
+                <p>Reducimos accidentes y optimizamos costos mediante monitoreo autónomo con <strong>IA Local</strong>.</p>
+            </div>
             <div class="cta-group">
-                <a href="#precios" class="btn-glow">Nuestros Planes</a>
-                <a href="#tecnologia" class="btn-outline">Saber Más</a>
+                <a href="#precios" class="btn-glow">Ver Planes</a>
             </div>
         </div>
     </header>
 
-    <section id="impacto" class="stats reveal">
+    <section id="impacto" class="section reveal">
         <div class="container">
-            <h2 class="section-title">¿Por qué invertir en Centinela?</h2>
+            <h2 class="section-title">Rentabilidad y Prevención</h2>
             <div class="stats-grid">
-                <div class="stat-box">
-                    <span class="stat-num">610k+</span>
-                    <p>Casos anuales de riesgo laboral que pueden prevenirse.</p>
+                <div class="text-box stat-card">
+                    <span class="stat-num">610,751</span>
+                    <p>Riesgos laborales registrados en 2024 que nuestra tecnología ayuda a mitigar[cite: 19, 41].</p>
                 </div>
-                <div class="stat-box highlight">
+                <div class="text-box stat-card highlight">
                     <span class="stat-num">$443,491</span>
-                    <p>Costo promedio que una empresa pierde por un solo accidente grave.</p>
+                    <p>Costo promedio por accidente que su empresa puede ahorrar con supervisión 24/7[cite: 31, 140].</p>
                 </div>
-                <div class="stat-box">
+                <div class="text-box stat-card">
                     <span class="stat-num">100%</span>
-                    <p>Privacidad de datos. Procesamiento local sin dependencia de la nube.</p>
+                    <p>Privacidad de datos industriales mediante procesamiento Edge Computing local[cite: 59, 156].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tecnologia" class="features reveal">
+    <section id="tecnologia" class="section reveal">
         <div class="container">
             <h2 class="section-title">Infraestructura de Grado Industrial</h2>
             <div class="features-grid">
-                <div class="f-card">
+                <div class="text-box f-card">
                     <i class="fas fa-microchip"></i>
                     <h3>Motor YOLOv8</h3>
-                    <p>Detección de equipo de protección personal (EPP) con 99% de precisión en tiempo real.</p>
+                    <p>Detección de equipo de protección personal (EPP) con precisión en tiempo real[cite: 68, 72].</p>
                 </div>
-                <div class="f-card">
+                <div class="text-box f-card">
                     <i class="fas fa-server"></i>
                     <h3>Edge Computing</h3>
-                    <p>Hardware local que procesa video sin saturar el ancho de banda externo.</p>
+                    <p>Hardware local que procesa video sin saturar el ancho de banda externo[cite: 55, 155].</p>
                 </div>
-                <div class="f-card">
-                    <i class="fas fa-file-invoice"></i>
+                <div class="text-box f-card">
+                    <i class="fas fa-file-contract"></i>
                     <h3>NOM-017 Compliant</h3>
-                    <p>Reportes automáticos listos para auditorías de la Secretaría del Trabajo.</p>
+                    <p>Reportes automáticos listos para auditorías de seguridad e higiene[cite: 60, 92].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="precios" class="pricing reveal">
+    <section id="precios" class="section reveal">
         <div class="container">
-            <h2 class="section-title">Soluciones a Medida</h2>
+            <h2 class="section-title">Nuestras Soluciones</h2>
             <div class="pricing-wrapper">
-                <div class="p-card">
-                    <h3>Paquete A</h3>
-                    <p class="p-desc">Implementación en infraestructura propia</p>
+                <div class="text-box p-card">
+                    <h3>Vigilante</h3>
+                    <p class="p-desc">Software & Integración</p>
                     <div class="p-price">$19,000<span>MXN</span></div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Licencia de software perpetua</li>
-                        <li><i class="fas fa-check"></i> Integración con CCTV actual</li>
-                        <li><i class="fas fa-check"></i> Soporte técnico especializado</li>
+                        <li><i class="fas fa-check"></i> Licencia perpetua para cámaras existentes [cite: 217, 218]</li>
+                        <li><i class="fas fa-check"></i> Configuración de IA local [cite: 218]</li>
+                        <li><i class="fas fa-check"></i> Soporte técnico por 3 meses [cite: 218]</li>
                     </ul>
-                    <a href="#" class="p-btn">Seleccionar</a>
+                    <a href="mailto:ventas@centinelai.tech" target="_blank" class="p-btn">Seleccionar Plan</a>
                 </div>
-                <div class="p-card pro">
-                    <div class="badge">Más Popular</div>
-                    <h3>Paquete B</h3>
+                <div class="text-box p-card pro">
+                    <div class="badge">Nivel Máximo</div>
+                    <h3>Comando</h3>
                     <p class="p-desc">Sistema Integral Llave en Mano</p>
                     <div class="p-price">$23,799<span>MXN</span></div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Software + Hardware de Alto Rendimiento</li>
-                        <li><i class="fas fa-check"></i> 4 Cámaras IP de grado industrial</li>
-                        <li><i class="fas fa-check"></i> Instalación y puesta en marcha</li>
+                        <li><i class="fas fa-check"></i> Estación de Trabajo + Software Centinela [cite: 219]</li>
+                        <li><i class="fas fa-check"></i> 4 Cámaras IP + DVR + Disco 4TB [cite: 219]</li>
+                        <li><i class="fas fa-check"></i> Instalación y puesta en marcha [cite: 219]</li>
                     </ul>
-                    <a href="#" class="p-btn">Seleccionar</a>
+                    <a href="mailto:ventas@centinelai.tech" target="_blank" class="p-btn">Seleccionar Plan</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="equipo" class="team reveal">
+    <section id="equipo" class="section reveal">
         <div class="container">
-            <h2 class="section-title">Founders</h2>
-            <div class="team-grid">
-                <div class="member">J.M. Castilla</div>
-                <div class="member">M.A. Rivera</div>
-                <div class="member current">V.H. Nieto</div>
-                <div class="member">J.C. Fierro</div>
-                <div class="member">M.A. Brenes</div>
+            <h2 class="section-title">Founding Partners</h2>
+            <div class="team-list">
+                <div class="text-box member-row">José María Castilla Balderas</div>
+                <div class="text-box member-row">Marco Antonio Rivera Del Angel</div>
+                <div class="text-box member-row current">Victor Hugo Nieto Morales</div>
+                <div class="text-box member-row">Juan Carlos Fierro Camarillo</div>
+                <div class="text-box member-row">Martha Alejandra Brenes Esparragoza</div>
             </div>
         </div>
     </section>
@@ -133,16 +136,6 @@
         </div>
     </footer>
 
-    <script>
-        // Efecto de aparición suave
-        window.addEventListener('scroll', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                let windowHeight = window.innerHeight;
-                let revealTop = el.getBoundingClientRect().top;
-                if (revealTop < windowHeight - 150) el.classList.add('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
