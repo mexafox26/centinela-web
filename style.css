@@ -102,3 +102,78 @@ nav {
 .btn-glow:hover, .p-btn:hover { box-shadow: 0 0 20px var(--cyan); transform: scale(1.05); }
 
 footer { padding: 60px; text-align: center; border-top: 1px solid #222; }
+
+/* --- ESTILOS DE LA PÁGINA DE PAGO --- */
+.payment-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.checkout-wrapper {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+    z-index: 10;
+}
+
+.order-summary, .payment-form-container {
+    flex: 1;
+    padding: 40px;
+}
+
+.checkout-title, .form-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cyan);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.plan-details {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.label { font-size: 0.8rem; color: #888; text-transform: uppercase; margin-bottom: 5px; }
+#selected-plan-name { font-family: 'Orbitron', sans-serif; margin-bottom: 15px; }
+#selected-plan-price { font-size: 2.2rem; color: var(--cyan); font-weight: bold; }
+
+.benefit-list { list-style: none; margin-bottom: 30px; }
+.benefit-list li { margin-bottom: 10px; font-size: 0.9rem; color: #ccc; }
+.benefit-list i { color: var(--cyan); margin-right: 10px; }
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--cyan); font-weight: 600; }
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    transition: 0.3s;
+}
+
+.input-group input:focus { border-color: var(--cyan); outline: none; box-shadow: 0 0 10px var(--blue-glow); }
+
+.input-row { display: flex; gap: 20px; }
+.checkout-btn { width: 100%; margin-top: 10px; border: none; cursor: pointer; }
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+    .checkout-wrapper { flex-direction: column; }
+}
