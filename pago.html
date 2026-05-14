@@ -3,50 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | Centinela AI</title>
+    <title>Pasarela de Pago Segura | Centinela AI</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="payment-body">
-    <div class="payment-container">
-        <div class="text-box payment-card">
-            <h2 class="section-title">Finalizar Adquisición</h2>
-            <p id="plan-display">Plan seleccionado: <span>Cargando...</span></p>
+<body class="payment-page">
+    <div class="overlay-grid"></div>
+    
+    <div class="checkout-wrapper">
+        <div class="order-summary glass-box">
+            <div class="brand">CENTINELA<span>AI</span></div>
+            <h2 class="checkout-title">Resumen de Adquisición</h2>
             
+            <div class="plan-details">
+                <div class="plan-info">
+                    <p class="label">Plan Seleccionado</p>
+                    <h3 id="selected-plan-name">Cargando...</h3>
+                </div>
+                <div class="plan-price">
+                    <p class="label">Total a Pagar</p>
+                    <h3 id="selected-plan-price">$0.00 <span>MXN</span></h3>
+                </div>
+            </div>
+
+            <ul class="benefit-list">
+                <li><i class="fas fa-check-circle"></i> Licencia de IA Perpetua</li>
+                <li><i class="fas fa-check-circle"></i> Procesamiento Edge local</li>
+                <li><i class="fas fa-check-circle"></i> Garantía de implementación</li>
+            </ul>
+            
+            <div class="secure-badge">
+                <i class="fas fa-shield-alt"></i>
+                <p>Pago encriptado de grado industrial</p>
+            </div>
+        </div>
+
+        <div class="payment-form-container glass-box">
+            <h2 class="form-title">Detalles de Facturación</h2>
             <form id="payment-form">
-                <div class="form-group">
-                    <label>Razón Social / Empresa</label>
-                    <input type="text" placeholder="Ej. Manufacturas del Centro S.A." required>
+                <div class="input-group">
+                    <label><i class="fas fa-building"></i> Razón Social / Empresa</label>
+                    <input type="text" placeholder="Ej. Industria Manufacturera S.A." required>
                 </div>
-                <div class="form-group">
-                    <label>RFC</label>
-                    <input type="text" placeholder="ABC123456XYZ" required>
+                
+                <div class="input-group">
+                    <label><i class="fas fa-id-card"></i> RFC</label>
+                    <input type="text" placeholder="ABC123456XYZ" style="text-transform: uppercase;" required>
                 </div>
-                <div class="form-group">
-                    <label>Número de Tarjeta</label>
-                    <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" required>
+
+                <div class="input-group">
+                    <label><i class="fas fa-credit-card"></i> Datos de la Tarjeta</label>
+                    <input type="text" id="card-num" placeholder="0000 0000 0000 0000" maxlength="19" required>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
+
+                <div class="input-row">
+                    <div class="input-group">
                         <label>Vencimiento</label>
                         <input type="text" placeholder="MM/AA" maxlength="5" required>
                     </div>
-                    <div class="form-group">
+                    <div class="input-group">
                         <label>CVV</label>
                         <input type="password" placeholder="***" maxlength="3" required>
                     </div>
                 </div>
-                <button type="submit" class="btn-glow w-100">Confirmar Pago</button>
+
+                <button type="submit" class="btn-glow checkout-btn">
+                    Confirmar Transacción <i class="fas fa-arrow-right"></i>
+                </button>
             </form>
-            <a href="index.html" class="back-link">← Cancelar y volver</a>
+            <a href="index.html" class="back-link">← Cancelar y volver al inicio</a>
         </div>
     </div>
 
     <script>
-        // Capturar el plan de la URL
+        // Lógica para detectar el plan seleccionado y actualizar precios
         const params = new URLSearchParams(window.location.search);
         const plan = params.get('plan');
-        document.querySelector('#plan-display span').innerText = plan || 'No seleccionado';
+        const planNameEl = document.getElementById('selected-plan-name');
+        const planPriceEl = document.getElementById('selected-plan-price');
+
+        if (plan === 'Comando') {
+            planNameEl.innerText = 'Paquete Comando';
+            planPriceEl.innerHTML = '$23,799 <span>MXN</span>';
+        } else {
+            planNameEl.innerText = 'Paquete Vigilante';
+            planPriceEl.innerHTML = '$19,000 <span>MXN</span>';
+        }
+
+        // Formateador simple de tarjeta
+        document.getElementById('card-num').addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        });
     </script>
 </body>
 </html>
