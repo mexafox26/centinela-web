@@ -1,10 +1,9 @@
 :root {
     --bg: #020202;
-    --panel: rgba(13, 13, 13, 0.85);
     --cyan: #00f2ff;
-    --blue-glow: rgba(0, 242, 255, 0.3);
-    --silver: #e0e0e0;
-    --border: 1px solid rgba(0, 242, 255, 0.2);
+    --blue: #0072ff;
+    --glass: rgba(15, 15, 15, 0.7);
+    --border: 1px solid rgba(0, 242, 255, 0.3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,42 +15,63 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo de diseño Industrial */
+/* Fondo Industrial con Imagen */
 .video-bg-container {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-    background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
-    filter: brightness(0.2) grayscale(0.5);
+    z-index: -2;
+    background: url('Logo Centinela.PNG') no-repeat center center/cover; /* Puedes cambiar esto por una foto de fábrica */
+    filter: brightness(0.15) contrast(1.2);
 }
 
 .overlay-grid {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
 }
 
-/* Recuadros estilizados */
-.text-box {
-    background: var(--panel);
+/* Recuadros Estilo Cristal (Glassmorphism) */
+.glass-box {
+    background: var(--glass);
     border: var(--border);
-    border-radius: 4px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: 0.4s ease;
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 10;
 }
 
-.text-box:hover {
-    border-color: var(--cyan);
-    box-shadow: 0 0 15px var(--blue-glow);
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--cyan);
+    text-shadow: 0 0 15px var(--cyan);
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 2.2rem;
 }
 
-/* Animaciones de Scroll */
+/* Navegación */
+nav {
+    position: fixed; width: 100%; padding: 20px 5%;
+    background: rgba(0,0,0,0.95); z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: bold; }
+.brand span { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { text-decoration: none; color: #ccc; transition: 0.3s; font-size: 0.9rem; }
+.nav-links a:hover { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
+
+/* Animaciones de Entrada */
 .reveal {
     opacity: 0;
-    transform: translateY(60px);
-    transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transform: translateY(40px);
+    transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal.active {
@@ -59,83 +79,26 @@ body {
     transform: translateY(0);
 }
 
-/* Navegación */
-nav {
-    position: fixed; width: 100%; background: rgba(0,0,0,0.9);
-    z-index: 1000; border-bottom: 1px solid #222;
-    padding: 15px 5%;
+/* Hero Section */
+.hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.main-logo { width: 280px; margin-bottom: 20px; }
+.glitch-text { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; color: white; }
+
+/* Grid de Planes y Founders */
+.pricing-wrapper, .stats-grid, .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+
+.p-card.pro { border: 2px solid var(--cyan); box-shadow: 0 0 20px rgba(0,242,255,0.2); }
+.p-price { font-size: 3rem; color: var(--cyan); font-weight: bold; margin: 15px 0; }
+.p-price span { font-size: 1rem; color: white; margin-left: 5px; }
+
+.member-row { margin-bottom: 10px; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
+.member-row.current { border-left: 4px solid var(--cyan); color: var(--cyan); }
+
+.nav-cta, .btn-glow, .p-btn {
+    background: var(--cyan); color: black; padding: 12px 25px; border-radius: 4px;
+    font-weight: bold; text-decoration: none; transition: 0.3s; display: inline-block;
 }
 
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.brand { font-family: 'Orbitron', sans-serif; font-weight: bold; font-size: 1.5rem; }
-.brand span { color: var(--cyan); text-shadow: 0 0 10px var(--cyan); }
+.btn-glow:hover, .p-btn:hover { box-shadow: 0 0 20px var(--cyan); transform: scale(1.05); }
 
-nav ul { display: flex; gap: 20px; list-style: none; }
-nav a { text-decoration: none; color: var(--silver); transition: 0.3s; }
-nav a:hover { color: var(--cyan); }
-
-/* Hero */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-.main-logo { width: 300px; margin-bottom: 20px; }
-h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; color: white; margin-bottom: 20px; }
-
-/* Grid de Soluciones */
-.pricing-wrapper { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 50px; }
-.p-card { width: 350px; padding: 40px; border-left: 4px solid var(--gray); }
-.p-card.pro { border-left-color: var(--cyan); }
-.p-price { font-size: 3rem; font-weight: bold; color: var(--cyan); margin: 20px 0; }
-
-/* Founders */
-.team-list { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-.member-row { width: 100%; max-width: 600px; text-align: center; font-size: 1.2rem; }
-.member-row.current { border-left: 4px solid var(--cyan); color: var(--cyan); font-weight: bold; }
-
-footer { padding: 40px; text-align: center; border-top: 1px solid #222; background: #000; }
-
-/* Estilos para el Formulario de Pago */
-.payment-body {
-    background: radial-gradient(circle, #001f3f 0%, #000 100%);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.payment-card {
-    width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    border: 2px solid var(--cyan);
-}
-
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; margin-bottom: 8px; color: var(--cyan); font-weight: bold; }
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    background: #111;
-    border: 1px solid #333;
-    color: white;
-    border-radius: 4px;
-}
-
-.form-row { display: flex; gap: 20px; }
-.w-100 { width: 100%; cursor: pointer; }
-
-.back-link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.back-link:hover { color: var(--cyan); }
-
-/* Ajuste de nombres de equipo */
-.member-row {
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+footer { padding: 60px; text-align: center; border-top: 1px solid #222; }
