@@ -3,121 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centinela | Visión Artificial Industrial</title>
+    <title>Centinela | IA para Seguridad Industrial</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="scanline"></div>
+    
     <nav>
         <div class="nav-container">
-            <div class="brand">CENTINELA</div>
+            <div class="brand">CENTINELA<span>.AI</span></div>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#tecnologia">Tecnología</a></li>
                 <li><a href="#precios">Planes</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#nosotros">Equipo</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="inicio" class="hero">
         <div class="hero-content">
-            <img src="Logo Centinela.PNG" alt="Logo Centinela" class="main-logo">
-            <h1>Seguridad Industrial Inteligente</h1>
-            <p>Protegiendo la integridad física de los trabajadores mediante visión artificial avanzada y procesamiento local.</p>
-            <div class="hero-btns">
+            <div class="logo-container">
+                <img src="Logo Centinela.PNG" alt="Logo Centinela" class="main-logo animate-pulse">
+            </div>
+            <h1 class="glitch" data-text="SEGURIDAD INDUSTRIAL INTELIGENTE">SEGURIDAD INDUSTRIAL INTELIGENTE</h1>
+            <p class="fade-in">Protegiendo la integridad física de los trabajadores mediante visión artificial avanzada y <strong>Edge Computing</strong>[cite: 14, 55].</p>
+            <div class="hero-btns fade-in">
                 <a href="#tecnologia" class="btn-primary">Ver Tecnología</a>
                 <a href="#precios" class="btn-secondary">Consultar Precios</a>
             </div>
         </div>
     </header>
 
-    <section class="stats-section">
+    <section class="stats-section reveal">
         <div class="container">
-            <h2>El Impacto de la Prevención</h2>
+            <h2 class="section-title">Problemática Nacional</h2>
             <div class="stats-grid">
                 <div class="stat-card">
+                    <i class="fas fa-user-injured"></i>
                     <h3>610,751</h3>
-                    <p>Riesgos laborales registrados en 2024.</p>
+                    <p>Riesgos laborales registrados por el IMSS en 2024[cite: 19, 41, 113].</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card featured-stat">
+                    <i class="fas fa-exclamation-triangle"></i>
                     <h3>69%</h3>
-                    <p>De los incidentes son accidentes de trabajo críticos.</p>
+                    <p>De los casos son accidentes críticos que afectan a jóvenes de 25 a 29 años[cite: 19].</p>
                 </div>
                 <div class="stat-card">
+                    <i class="fas fa-dollar-sign"></i>
                     <h3>$443,491</h3>
-                    <p>Costo promedio por evento de incapacidad (MXN).</p>
+                    <p>Costo directo promedio por un solo evento de incapacidad[cite: 31, 140].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tecnologia" class="tech-section">
+    <section id="tecnologia" class="tech-section reveal">
         <div class="container">
-            <h2>Propuesta de Valor TecNM</h2>
+            <h2 class="section-title">Innovación Centinela</h2>
             <div class="tech-grid">
                 <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-microchip"></i></div>
                     <h4>IA con YOLOv8</h4>
-                    <p>Detección autónoma de EPP (cascos y chalecos) con algoritmos de última generación.</p>
+                    <p>Detección autónoma de EPP (cascos y chalecos) en milisegundos[cite: 68, 72].</p>
                 </div>
                 <div class="tech-card">
-                    <h4>Edge Computing</h4>
-                    <p>Procesamiento local que garantiza privacidad total y soberanía de datos industriales.</p>
+                    <div class="tech-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Privacidad Total</h4>
+                    <p>Procesamiento local (Edge Computing) que garantiza la soberanía de sus datos[cite: 55, 59].</p>
                 </div>
                 <div class="tech-card">
-                    <h4>NOM-017-STPS-2024</h4>
-                    <p>Automatización de reportes para el cumplimiento normativo nacional vigente.</p>
+                    <div class="tech-icon"><i class="fas fa-file-contract"></i></div>
+                    <h4>Cumplimiento NOM</h4>
+                    <p>Automatización de reportes según la <strong>NOM-017-STPS-2024</strong>[cite: 60, 92, 114].</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="precios" class="pricing-section">
+    <section id="precios" class="pricing-section reveal">
         <div class="container">
-            <h2>Inversión en Seguridad</h2>
+            <h2 class="section-title">Planes de Implementación</h2>
             <div class="pricing-grid">
                 <div class="price-box">
                     <h3>Paquete A</h3>
                     <div class="price">$19,000<span>MXN</span></div>
                     <ul>
-                        <li>Licencia de Software personalizada [cite: 217, 392]</li>
+                        <li>Licencia de Software [cite: 217, 392]</li>
                         <li>Configuración de IA local [cite: 218]</li>
-                        <li>Soporte técnico por 3 meses [cite: 218, 378]</li>
-                        <li>Integración con CCTV existente [cite: 218, 359]</li>
+                        <li>Soporte técnico por 3 meses [cite: 218]</li>
+                        <li>Integración con CCTV existente [cite: 218]</li>
                     </ul>
                 </div>
                 <div class="price-box featured">
+                    <div class="popular-tag">Solución Integral</div>
                     <h3>Paquete B</h3>
                     <div class="price">$23,799<span>MXN</span></div>
                     <ul>
-                        <li>Sistema completo (Software + Hardware) [cite: 219, 413]</li>
+                        <li>Todo lo del Paquete A [cite: 219, 413]</li>
                         <li>4 Cámaras Dahua + DVR + Monitor [cite: 219]</li>
-                        <li>Instalación por técnico especializado [cite: 219, 315]</li>
-                        <li>Disco duro de 4TB para almacenamiento [cite: 219]</li>
+                        <li>Instalación Profesional [cite: 219]</li>
+                        <li>Disco duro de 4TB incluido [cite: 219]</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="team-section">
+    <section id="nosotros" class="team-section reveal">
         <div class="container">
-            <h2>Equipo Desarrollador</h2>
-            <p>Proyecto desarrollado para <strong>InnovaTecNM 2026</strong>[cite: 6].</p>
-            <ul class="authors-list">
-                <li>José María Castilla Balderas [cite: 15, 134]</li>
-                <li>Marco Antonio Rivera del Ángel [cite: 15, 134]</li>
-                <li>Victor Hugo Nieto Morales [cite: 15, 134]</li>
-                <li>Juan Carlos Fierro Camarillo [cite: 15, 134]</li>
-                <li>Martha Alejandra Brenes Esparragoza [cite: 15, 134]</li>
-            </ul>
+            <h2 class="section-title">Equipo de Innovación</h2>
+            <p>Proyecto desarrollado para <strong>InnovaTecNM 2026</strong>[cite: 7, 126].</p>
+            <div class="team-grid">
+                <div class="team-member">J. Castilla</div>
+                <div class="team-member">M. Rivera</div>
+                <div class="team-member highlight">V. Nieto</div>
+                <div class="team-member">J. Fierro</div>
+                <div class="team-member">M. Brenes</div>
+            </div>
             <p class="institution">Instituto Tecnológico de Tehuacán [cite: 8, 127]</p>
+            <p class="folio">Folio: 68542-17 [cite: 11, 130]</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Centinela - Todos los derechos reservados.</p>
-        <p>Folio del Proyecto: 68542-17 [cite: 11, 130]</p>
+        <p>&copy; 2026 Centinela - Inteligencia Artificial para la Salud Humana[cite: 11, 130].</p>
     </footer>
+
+    <script>
+        // Animación de aparición al hacer scroll
+        window.addEventListener('scroll', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveal.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 100) {
+                    reveal.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
