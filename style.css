@@ -290,3 +290,58 @@ input:focus, textarea:focus {
         margin-bottom: 30px;
     }
 }
+/* --- ESTILOS SECCIÓN PRUEBAS --- */
+#pruebas .section-title {
+    margin-bottom: 50px;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.evidence-card {
+    padding: 0 !important; /* El padding lo manejan los contenedores internos */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.evidence-image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.evidence-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.evidence-card:hover .evidence-img {
+    transform: scale(1.05); /* Efecto zoom suave */
+}
+
+.evidence-text {
+    padding: 30px;
+}
+
+.evidence-text p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+    .evidence-image-container {
+        height: 200px;
+    }
+}
