@@ -570,46 +570,6 @@ body::after {
         line-height: 1.2;
     }
 }
-/* --- AJUSTES EN NAVEGACIÓN GENERAL --- */
-nav {
-    position: fixed; 
-    width: 100%; 
-    padding: 10px 0; /* Cambiado para mejor control */
-    background: rgba(0, 0, 0, 0.95); 
-    z-index: 1000;
-    border-bottom: 1px solid #222;
-}
-
-.nav-container { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 20px; /* Padding interno para que no toque los bordes */
-}
-
-/* --- MEDIA QUERY PARA MÓVILES (SOLUCIÓN AL CORTE) --- */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-
-    .brand {
-        font-size: 1.2rem; /* Reducimos tamaño para ganar espacio */
-    }
-
-    /* Ocultamos los links de texto para evitar el desborde horizontal */
-    /* Lo ideal es un menú hamburguesa, pero por ahora esto evita el error visual */
-    .nav-links {
-        display: none; 
-    }
-
-    .nav-cta {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-}
 
 @media (max-width: 768px) {
     .nav-links {
