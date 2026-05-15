@@ -176,3 +176,33 @@ nav {
     border: 1px solid var(--cyan) !important;
     box-shadow: inset 0 0 15px var(--blue-glow);
 }
+.solution-intro {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 40px !important;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--cyan) !important;
+    text-align: center;
+}
+
+.intro-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 100px; height: 100px;
+    background: linear-gradient(135deg, transparent 50%, rgba(0, 242, 255, 0.1) 50%);
+}
+
+.main-statement {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-family: 'Rajdhani', sans-serif;
+    color: #e0e0e0;
+}
+
+.main-statement span {
+    color: var(--cyan);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--blue-glow);
+}
