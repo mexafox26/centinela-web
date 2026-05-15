@@ -431,3 +431,30 @@ input:focus, textarea:focus {
 .team-card:hover::after {
     opacity: 0.2;
 }
+/* Ajustes para las listas de precios */
+.p-features {
+    list-style: none;
+    text-align: left; /* Alineado a la izquierda para mejor lectura */
+    margin: 20px 0 30px 0;
+    min-height: 220px; /* Mantiene las tarjetas del mismo tamaño */
+}
+
+.p-features li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.p-features li i {
+    color: var(--cyan);
+    margin-top: 3px;
+    font-size: 0.8rem;
+}
+
+/* El paquete comando resalta un poco más */
+.p-card.pro .p-features li i {
+    text-shadow: 0 0 5px var(--cyan);
+}
