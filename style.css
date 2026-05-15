@@ -12,6 +12,7 @@ body {
     background-color: var(--bg);
     color: white;
     font-family: 'Rajdhani', sans-serif;
+    max-width: 100vw;
     overflow-x: hidden;
 }
 
@@ -587,5 +588,32 @@ body::after {
     
     .nav-links a {
         font-size: 0.7rem;
+    }
+}
+/* --- RESPONSIVO PARA EL FOOTER --- */
+@media (max-width: 768px) {
+    .footer-container {
+        /* Pasamos de 3 columnas a 1 sola columna en vertical */
+        grid-template-columns: 1fr; 
+        gap: 40px;
+        text-align: center; /* Centramos el texto para que luzca mejor en móvil */
+    }
+
+    .footer-column h3 {
+        margin-bottom: 15px;
+    }
+
+    /* Alineamos los iconos sociales al centro en móvil */
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Ajuste para el eslogan del footer */
+    .footer-slogan {
+        border-left: none;
+        border-top: 2px solid var(--cyan);
+        padding-left: 0;
+        padding-top: 10px;
+        display: inline-block;
     }
 }
