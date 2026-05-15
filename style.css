@@ -514,3 +514,16 @@ body::after {
     left: 100%;
     transition: 0.7s;
 }
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Evita que elementos con animaciones de entrada (reveal) 
+       estén fuera de la pantalla antes de activarse */
+    .reveal {
+        overflow: hidden;
+    }
+}
