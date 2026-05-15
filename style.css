@@ -527,3 +527,46 @@ body::after {
         overflow: hidden;
     }
 }
+@media (max-width: 768px) {
+    /* 1. Evita que el menú empuje el ancho de la página */
+    .nav-links {
+        display: none; /* Opción A: Ocultar links (puedes crear un menú hamburguesa después) */
+    }
+
+    /* Si prefieres que se vean pero en pequeño, usa esto en lugar de display:none */
+    /*
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.7rem;
+    }
+    */
+
+    /* 2. Ajusta el Hero para que el contenido no se desborde */
+    .hero-content {
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-box.glass-box {
+        width: 100%; /* Que ocupe el ancho disponible sin salirse */
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 3. El logo y el título deben encogerse */
+    .main-logo {
+        max-width: 150px; /* Tamaño mucho más razonable para móvil */
+        height: auto;
+    }
+
+    .glitch-text {
+        font-size: 1.4rem; /* Un tamaño que no rompa la caja */
+        line-height: 1.2;
+    }
+}
