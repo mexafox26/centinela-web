@@ -939,3 +939,166 @@ body::after {
     }
     .order-summary { order: -1; }
 }
+/* --- COTIZAR PAGE: RADAR & SCAN --- */
+.cotizar-page {
+    background: #010a0c;
+    min-height: 100vh;
+    /* Cambiamos hidden por auto para permitir scroll vertical */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    position: relative;
+    /* Asegura que el scroll sea fluido en móviles */
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Efecto de Radar Animado en el fondo */
+.radar-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vw;
+    background: repeating-radial-gradient(
+        circle,
+        transparent 0,
+        transparent 10%,
+        rgba(0, 242, 255, 0.03) 10.5%,
+        transparent 11%
+    );
+    animation: radarExpand 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes radarExpand {
+    from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+/* Línea de escaneo global lenta */
+.scan-line-global {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: rgba(0, 242, 255, 0.2);
+    box-shadow: 0 0 20px var(--cyan);
+    z-index: 1;
+    animation: scanMove 8s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes scanMove {
+    0%, 100% { top: 0%; }
+    50% { top: 100%; }
+}
+
+/* Contenedor del Formulario */
+.quote-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    max-width: 500px;
+    width: 100%;
+    border-top: 3px solid var(--cyan);
+    padding: 40px !important;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Estilos de Inputs para Cotizar */
+.cotizar-page .input-group label {
+    display: block;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    font-family: 'Orbitron';
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.cotizar-page input, 
+.cotizar-page select, 
+.cotizar-page textarea {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    color: white;
+    border-radius: 2px;
+    font-family: 'Rajdhani';
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.cotizar-page input:focus, 
+.cotizar-page select:focus, 
+.cotizar-page textarea:focus {
+    border-color: var(--cyan);
+    background: rgba(0, 242, 255, 0.05);
+    box-shadow: 0 0 15px var(--blue-glow);
+    outline: none;
+}
+
+.quote-submit {
+    padding: 18px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.back-link:hover { color: var(--cyan); }
+
+/* Animación de entrada especial para el card */
+.form-card.reveal.active {
+    animation: zoomInTech 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomInTech {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.radar-bg, 
+.scan-line-global, 
+.overlay-grid {
+    position: fixed; 
+    pointer-events: none; /* Evita que el fondo interfiera con los clics */
+}
+
+/* Ajuste del contenedor para dar espacio al final en móviles */
+.quote-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px; /* Aumentamos padding superior e inferior */
+    box-sizing: border-box;
+}
+/* --- CORRECCIÓN DE COLORES EN SELECT --- */
+.cotizar-page select option {
+    background-color: #010a0c; /* El mismo fondo oscuro de tu página */
+    color: white;              /* Texto blanco para que resalte */
+    padding: 10px;
+}
+
+/* Para navegadores basados en Webkit (Chrome, Safari, Edge) */
+.cotizar-page select {
+    color-scheme: dark; /* Indica al navegador que use el estilo oscuro del sistema */
+}
