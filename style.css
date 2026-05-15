@@ -226,3 +226,21 @@ input:focus, textarea:focus {
     border-color: var(--cyan) !important;
     box-shadow: 0 0 10px var(--blue-glow);
 }
+/* --- ESPECIFICACIONES GRID --- */
+.specs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+.spec-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; color: var(--cyan); }
+.spec-list { list-style: none; font-size: 0.9rem; }
+.spec-list li { margin-bottom: 8px; border-left: 2px solid var(--cyan); padding-left: 10px; }
+.highlight-border { border: 1px solid var(--cyan) !important; box-shadow: 0 0 15px var(--blue-glow); }
+
+/* --- BANNER SOLUCIÓN --- */
+.solution-intro { text-align: center; margin-bottom: 40px; border-left: 4px solid var(--cyan) !important; }
+.main-statement { font-size: 1.3rem; line-height: 1.6; }
+.main-statement span { color: var(--cyan); font-weight: bold; text-shadow: 0 0 10px var(--cyan); }
+
+/* --- HOVER REDES SOCIALES --- */
+.social-icons a:hover { color: var(--cyan); transform: translateY(-3px); box-shadow: 0 5px 15px var(--blue-glow); }
