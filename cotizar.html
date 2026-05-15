@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Cotización | Centinela AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="cotizar-page">
+    <div class="overlay-grid"></div>
+
+    <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+        <div class="text-box glass-box form-container" style="max-width: 500px; width: 100%;">
+            <div class="brand" style="text-align: center; margin-bottom: 20px;">CENTINEL<span>AI</span></div>
+            <h2 class="section-title" style="margin-bottom: 10px; font-size: 1.5rem;">Solicitud de Cotización</h2>
+            <p style="text-align: center; color: #ccc; margin-bottom: 30px;">Complete los datos para recibir una propuesta técnica personalizada vía WhatsApp.</p>
+            
+            <form id="quoteForm">
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label style="display: block; color: var(--cyan); margin-bottom: 5px;">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required 
+                           style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 4px;">
+                </div>
+
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label style="display: block; color: var(--cyan); margin-bottom: 5px;">Empresa</label>
+                    <input type="text" id="empresa" placeholder="Nombre de su industria" required
+                           style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 4px;">
+                </div>
+
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label style="display: block; color: var(--cyan); margin-bottom: 5px;">Plan de Interés</label>
+                    <select id="plan" style="width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: white; border-radius: 4px;">
+                        <option value="Vigilante (Software)">Vigilante (Solo Software)</option>
+                        <option value="Comando (Integral)">Comando (Llave en mano)</option>
+                        <option value="Consulta Personalizada">Consulta Personalizada</option>
+                    </select>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label style="display: block; color: var(--cyan); margin-bottom: 5px;">Mensaje / Requerimientos</label>
+                    <textarea id="mensaje" rows="3" placeholder="Cuéntenos sobre su planta..." 
+                              style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 4px; resize: none;"></textarea>
+                </div>
+
+                <button type="submit" class="p-btn" style="width: 100%; cursor: pointer; border: none;">
+                    ENVIAR A WHATSAPP <i class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+            
+            <a href="index.html" style="display: block; text-align: center; margin-top: 20px; color: #666; text-decoration: none; font-size: 0.9rem;">← Volver al inicio</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 1. Obtener los datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const empresa = document.getElementById('empresa').value;
+            const plan = document.getElementById('plan').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            // 2. Configurar el número de teléfono (sin espacios ni signos)
+            const telefono = "522204689180"; 
+            
+            // 3. Crear el mensaje codificado para URL
+            const texto = `Hola Centinela AI, solicito una cotización:%0A%0A` +
+                          `*Nombre:* ${nombre}%0A` +
+                          `*Empresa:* ${empresa}%0A` +
+                          `*Plan:* ${plan}%0A` +
+                          `*Mensaje:* ${mensaje}`;
+            
+            // 4. Redirigir a WhatsApp
+            const url = `https://wa.me/${telefono}?text=${texto}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
