@@ -9,75 +9,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="payment-page">
-    <div class="overlay-grid"></div>
-    
-    <div class="checkout-wrapper">
-        <div class="order-summary glass-box">
-            <div class="brand">CENTINELA<span>AI</span></div>
-            <h2 class="checkout-title">Resumen de Adquisición</h2>
-            
-            <div class="plan-details">
-                <div class="plan-info">
-                    <p class="label">Plan Seleccionado</p>
-                    <h3 id="selected-plan-name">Cargando...</h3>
-                </div>
-                <div class="plan-price">
-                    <p class="label">Total a Pagar</p>
-                    <h3 id="selected-plan-price">$0.00 <span>MXN</span></h3>
-                </div>
-            </div>
+    <div class="moving-grid"></div>
+    <div class="glow-bg"></div>
+    <div class="data-particles"></div>
 
-            <ul class="benefit-list">
-                <li><i class="fas fa-check-circle"></i> Licencia de IA Perpetua</li>
-                <li><i class="fas fa-check-circle"></i> Procesamiento Edge local</li>
-                <li><i class="fas fa-check-circle"></i> Garantía de implementación</li>
-            </ul>
+    <div class="container">
+        <div class="checkout-wrapper reveal active">
             
-            <div class="secure-badge">
-                <i class="fas fa-shield-alt"></i>
-                <p>Pago encriptado de grado industrial</p>
-            </div>
-        </div>
-
-        <div class="payment-form-container glass-box">
-            <h2 class="form-title">Detalles de Facturación</h2>
-            <form id="payment-form">
-                <div class="input-group">
-                    <label><i class="fas fa-building"></i> Razón Social / Empresa</label>
-                    <input type="text" placeholder="Ej. Industria Manufacturera S.A." required>
-                </div>
+            <div class="order-summary glass-box highlight-border">
+                <div class="brand">CENTINELA<span>AI</span></div>
+                <h2 class="checkout-title">Resumen de Adquisición</h2>
                 
-                <div class="input-group">
-                    <label><i class="fas fa-id-card"></i> RFC</label>
-                    <input type="text" placeholder="ABC123456XYZ" style="text-transform: uppercase;" required>
-                </div>
-
-                <div class="input-group">
-                    <label><i class="fas fa-credit-card"></i> Datos de la Tarjeta</label>
-                    <input type="text" id="card-num" placeholder="0000 0000 0000 0000" maxlength="19" required>
-                </div>
-
-                <div class="input-row">
-                    <div class="input-group">
-                        <label>Vencimiento</label>
-                        <input type="text" placeholder="MM/AA" maxlength="5" required>
+                <div class="plan-details-box">
+                    <div class="plan-info">
+                        <span class="plan-badge">SISTEMA ACTIVO</span>
+                        <p class="label">Plan Seleccionado</p>
+                        <h3 id="selected-plan-name">Cargando...</h3>
                     </div>
-                    <div class="input-group">
-                        <label>CVV</label>
-                        <input type="password" placeholder="***" maxlength="3" required>
+                    <div class="plan-price">
+                        <p class="label">Total a Pagar</p>
+                        <h3 id="selected-plan-price" class="glow-text">$0.00 <span>MXN</span></h3>
                     </div>
                 </div>
 
-                <button type="submit" class="btn-glow checkout-btn">
-                    Confirmar Transacción <i class="fas fa-arrow-right"></i>
-                </button>
-            </form>
-            <a href="index.html" class="back-link">← Cancelar y volver al inicio</a>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-check-circle"></i> Licencia de IA Perpetua</li>
+                    <li><i class="fas fa-microchip"></i> Procesamiento Edge local</li>
+                    <li><i class="fas fa-shield-alt"></i> Garantía de implementación</li>
+                    <li><i class="fas fa-file-contract"></i> Cumplimiento NOM-017</li>
+                </ul>
+                
+                <div class="secure-badge">
+                    <i class="fas fa-lock"></i>
+                    <p>Pago encriptado de grado industrial (SSL)</p>
+                </div>
+            </div>
+
+            <div class="payment-form-container glass-box">
+                <h2 class="form-title">Detalles de Facturación</h2>
+                <form id="payment-form">
+                    <div class="input-group">
+                        <label><i class="fas fa-building"></i> Razón Social / Empresa</label>
+                        <input type="text" placeholder="Ej. Industria Manufacturera S.A." required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label><i class="fas fa-id-card"></i> RFC</label>
+                        <input type="text" placeholder="ABC123456XYZ" style="text-transform: uppercase;" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fas fa-credit-card"></i> Datos de la Tarjeta</label>
+                        <input type="text" id="card-num" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Vencimiento</label>
+                            <input type="text" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+                        <div class="input-group">
+                            <label>CVV</label>
+                            <input type="password" placeholder="***" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="p-btn submit-btn">
+                        CONFIRMAR TRANSACCIÓN <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+                <a href="index.html" class="back-link">← Cancelar y volver al inicio</a>
+            </div>
         </div>
     </div>
 
     <script>
-        // Lógica para detectar el plan seleccionado y actualizar precios
+        // Lógica de detección de Plan
         const params = new URLSearchParams(window.location.search);
         const plan = params.get('plan');
         const planNameEl = document.getElementById('selected-plan-name');
@@ -91,7 +98,7 @@
             planPriceEl.innerHTML = '$19,000 <span>MXN</span>';
         }
 
-        // Formateador simple de tarjeta
+        // Formateador de Tarjeta
         document.getElementById('card-num').addEventListener('input', function (e) {
             e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
         });
